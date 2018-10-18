@@ -2,10 +2,10 @@
   <div>
     <h2>Child Component</h2>
     <aside>edit the fields</aside>
-    <div class="field" v-for="(val, key) in field" :key="key">
+    <div class="field" v-for="(val, key) in value" :key="key">
       <label>
         {{ key }}
-        <input v-model="$props['field'][key]" />
+        <input v-model="value[key]" />
       </label>
     </div>
   </div>
@@ -14,11 +14,7 @@
 <script>
 export default {
   name: "Test",
-  props: {
-    field: {
-      type: Object
-    }
-  }
+  props: ["value"]
 };
 </script>
 

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <h2>Top component sees: {{ $data }}</h2>
+    <h2>Top component sees: {{ field }}</h2>
     <hr />
-    <Test v-bind:field="$data" />
+    <Test :value="field" />
   </div>
 </template>
 
@@ -12,9 +12,11 @@ import Test from "./components/Test";
 export default {
   name: "App",
   data: () => ({
-    x: 1,
-    y: "one",
-    z: "hello"
+    field: {
+      x: 1,
+      y: "one",
+      z: "hello"
+    }
   }),
   components: {
     Test
