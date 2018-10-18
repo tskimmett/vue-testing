@@ -5,7 +5,7 @@
     <div class="field" v-for="(val, key) in field" :key="key">
       <label>
         {{ key }}
-        <input v-model="$props['field'][key]" @input="$emit('updated')" />
+        <input v-model="$props['field'][key]" />
       </label>
     </div>
   </div>
@@ -17,13 +17,6 @@ export default {
   props: {
     field: {
       type: Object
-    }
-  },
-  methods: {
-    update: function(e) {
-      console.log("updated");
-      this.field.unknown = new Date().toString();
-      this.$emit("updated");
     }
   }
 };
