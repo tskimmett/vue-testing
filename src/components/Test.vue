@@ -1,7 +1,8 @@
 <template>
   <div>
     <h2>Child Component</h2>
-    <div v-for="(val, key) in field" :key="key">
+    <aside>edit the fields</aside>
+    <div class="field" v-for="(val, key) in field" :key="key">
       <label>
         {{ key }}
         <input v-model="$props['field'][key]" @input="$emit('updated')" />
@@ -45,4 +46,11 @@ li {
 a {
   color: #42b983;
 }
+label {font-weight: bold;}
+
+.field:not(:first-child) {margin-top: 10px;}
+
+input {border-radius: 3px; border: solid 1px #aaa; padding: 4px; }
+
+aside {font-size: 12px;}
 </style>
